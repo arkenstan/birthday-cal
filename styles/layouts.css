@@ -1,0 +1,33 @@
+header {
+  text-align: center;
+  font-weight: 300;
+  font-size: 68px;
+  color: #5a6a77;
+  padding: var(--general-padding);
+}
+
+.take-up-width {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.basic-col-flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.basic-row-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.group-col-flex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+.form-layout {
+  display: flex;
+  flex-flow: row wrap;
+}
