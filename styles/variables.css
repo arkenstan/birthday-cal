@@ -1,0 +1,10 @@
+:root {
+  --general-padding: 20px;
+  --general-padding-vertical: 15px;
+  --general-padding-horizontal: 20px;
+
+  --general-border-radius: 5px;
+
+  --general-font-size: 18px;
+  --input-font-size: 16px;
+}
