@@ -1,4 +1,11 @@
 import { createUser, postProcessUsers } from './users.module.js';
+import { createCalCards } from './layout.module.js';
+
+function initializeUI() {
+  createCalCards();
+}
+
+window.onload = initializeUI();
 
 let inputs = {
   users: [
