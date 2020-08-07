@@ -6,9 +6,67 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>Birthday Calender</title>
   </head>
-  <body>
-    <h1>Hello</h1>
+  <body class="basic-col-flex">
+    <header class="take-up-width">
+      <span>Birthday Cal</span>
+    </header>
 
-    <script src="./js/app.js"></script>
+    <main class="basic-col-flex take-up-width">
+      <section class="cards-container take-up-width" id="cardsContainer">
+        <div class="card">
+          <div class="card-header">
+            <span class="heading">MON</span>
+          </div>
+          <div class="card-content">
+            <div class="none">
+              <span class="rotate-90">:</span>
+              <span>~</span>
+            </div>
+            <!-- <div class="user">
+              <span class="user-initials">
+                UN
+              </span>
+            </div>
+            <div class="user">UN</div>
+            <div class="user">UN</div>
+            <div class="user">UN</div>
+            <div class="user">UN</div>
+            <div class="user">UN</div> -->
+            <!-- <div class="user">UN</div> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="form-container basic-row-flex take-up-width">
+        <form
+          action=""
+          class="form-layout"
+          name="birthdayForm"
+          id="birthdayForm"
+        >
+          <textarea
+            class="input-control"
+            name="birthdayList"
+            placeholder="Birthday list"
+            required="true"
+          ></textarea>
+          <div class="group-col-flex">
+            <label class="input-container">
+              Year
+              <input
+                class="input-control"
+                type="number"
+                name="year"
+                required="true"
+                placeholder="Year"
+              />
+            </label>
+            <button class="btn btn-color-primary" type="submit">UPDATE</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>
