@@ -1,0 +1,9 @@
+.btn {
+  padding: var(--general-padding-vertical) var(--general-padding-horizontal);
+  border-radius: var(--general-border-radius);
+}
+.btn-color-primary {
+  background-color: #0186ef;
+  box-shadow: 0 4px 2px -1px #0075cd;
+  color: #fff;
+}
