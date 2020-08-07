@@ -8,7 +8,6 @@ header {
 
 .take-up-width {
   width: 100%;
-  border: 1px solid #000;
 }
 
 .basic-col-flex {
@@ -30,4 +29,8 @@ header {
 .form-layout {
   display: flex;
   flex-flow: row wrap;
+}
+
+.cards-container {
+  display: flex;
 }
