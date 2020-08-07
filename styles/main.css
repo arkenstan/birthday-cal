@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Source+Code+Pro&display=swap');
+@import 'variables.css';
+@import 'layouts.css';
+@import 'buttons.css';
+@import 'forms.css';
+@import 'components.css';
 * {
   margin: 0;
   padding: 0;
@@ -17,5 +22,9 @@ body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #eaf0f2;
 }
