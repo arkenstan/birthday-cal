@@ -26,7 +26,7 @@ function createCalCards() {
     cardContent.setAttribute('class', 'card-content');
     // cardContent.setAttribute('id', `${globalData.cardIdPrefix}${day}`);
     cardContent.innerHTML = `<div class="user-content" id="${globalData.cardIdPrefix}${day}">
-    <div class="user color-class-none"><h1>None</h1></div></div>
+    <div class="user color-class-none"></div></div>
     `;
 
     card.append(cardHeader, cardContent);
@@ -58,7 +58,7 @@ function addUsersToCards(users) {
     if (dayContainers[day] && dayContainers[day].length > 0) {
       contentEl.append(...dayContainers[day]);
     } else {
-      contentEl.innerHTML = `<div class="user none-color"><h1>None</h1></div>`;
+      contentEl.innerHTML = `<div class="user color-class-none"></div>`;
     }
   }
 }

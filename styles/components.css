@@ -3,8 +3,9 @@
   display: flex;
   flex-flow: column nowrap;
   border-radius: 5px 5px 0 0;
-  width: 218px;
-  min-height: 250px;
+  min-width: 150px;
+  max-width: 100%;
+  /* min-height: 250px; */
   background-color: #fff;
   margin: 10px;
   /* border: 2px solid #d3d9db; */
@@ -48,6 +49,13 @@
   display: block;
   padding-bottom: 100%;
   /* grid-area: 1 / 1 / 2 / 2; */
+}
+.color-class-none {
+  background-image: url('../assets/sad.svg');
+  background-color: #dee4e6;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 150px 150px;
 }
 .color-class-1 {
   background-color: #545b7b;
