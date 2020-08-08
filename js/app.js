@@ -13,7 +13,7 @@ function initializeForms() {
     } else {
       const { birthdays, year } = formData;
       let users = processUserInput(birthdays, year);
-      console.log('initializeForms -> users', users);
+      addUsersToCards(users);
     }
   });
 }
@@ -21,10 +21,10 @@ function initializeForms() {
 function initialize() {
   createCalCards();
   initializeForms();
-  let users = processUserInput(sampleInputs.users, sampleInputs.yearInput);
-  // console.log('initialize -> users', users);
-  console.table(users);
-  addUsersToCards(users);
+  // let users = processUserInput(sampleInputs.users, sampleInputs.yearInput);
+  // // console.log('initialize -> users', users);
+  // console.table(users);
+  // addUsersToCards(users);
 }
 
 window.onload = initialize;
