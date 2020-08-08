@@ -12,25 +12,26 @@
     </header>
 
     <main class="basic-col-flex take-up-width">
+      <!-- Section to hold all cal cards -->
       <section
         class="cards-container basic-row-flex take-up-width"
         id="cardsContainer"
       ></section>
+      <!-- End Section for all cal cards -->
 
       <section class="form-container basic-row-flex take-up-width">
-        <form
-          action=""
-          class="form-layout"
-          name="birthdayForm"
-          id="birthdayForm"
-        >
+        <!-- Birthday Form  -->
+        <form class="form-layout" name="birthdayForm" id="birthdayForm">
+          <!-- Array Input for birthday -->
           <textarea
             class="input-control input-textarea"
             name="birthdayList"
             placeholder="Birthday list"
             required="true"
           ></textarea>
+          <!-- End Array Input -->
           <div class="group-col-flex">
+            <!-- Year Input -->
             <label class="input-container">
               Year
               <input
@@ -39,11 +40,16 @@
                 name="year"
                 required="true"
                 placeholder="Year"
+                min="1900"
               />
             </label>
+            <!-- End Year Input -->
             <button class="btn btn-color-primary" type="submit">UPDATE</button>
+
+            <ul class="form-errors" id="formErrors"></ul>
           </div>
         </form>
+        <!-- End Birthday Form -->
       </section>
     </main>
 
