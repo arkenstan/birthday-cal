@@ -24,8 +24,10 @@ function createCalCards() {
     // Create card content
     let cardContent = document.createElement('div');
     cardContent.setAttribute('class', 'card-content');
-    cardContent.setAttribute('id', `${globalData.cardIdPrefix}${day}`);
-    cardContent.innerHTML = `<div class="none"><h1>None</h1></div>`;
+    // cardContent.setAttribute('id', `${globalData.cardIdPrefix}${day}`);
+    cardContent.innerHTML = `<div class="user-content" id="${globalData.cardIdPrefix}${day}">
+    <div class="user color-class-none"><h1>None</h1></div></div>
+    `;
 
     card.append(cardHeader, cardContent);
     cards.push(card);
@@ -38,13 +40,16 @@ function addUsersToCards(users) {
   let dayContainers = {};
 
   for (let user of users) {
-    if (!dayContainers[user.birthDay]) {
-      dayContainers[user.birthDay] = [];
+    const { dayOfWeek, initials } = user;
+    if (!dayContainers[dayOfWeek]) {
+      dayContainers[dayOfWeek] = [];
     }
     let userCard = document.createElement('div');
-    userCard.setAttribute('class', 'user');
-    userCard.innerText = user.initials;
-    dayContainers[user.birthDay].push(userCard);
+    let coloClassIndex =
+      (dayContainers[dayOfWeek].length % globalData.colorClasses) + 1;
+    userCard.setAttribute('class', `user color-class-${coloClassIndex}`);
+    userCard.innerText = initials;
+    dayContainers[dayOfWeek].push(userCard);
   }
 
   for (let day of globalData.days) {
