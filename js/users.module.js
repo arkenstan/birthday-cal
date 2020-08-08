@@ -1,4 +1,4 @@
-import { globalData } from './helpers.js';
+import { globalData } from './constants.js';
 
 function processInitials(userName, initials) {
   let nameSplitted = userName.split(' ');

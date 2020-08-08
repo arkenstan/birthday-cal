@@ -1,9 +1,9 @@
-import { sampleInputs } from './helpers.js';
+import { sampleInputs } from './constants.js';
 import { processUserInput } from './users.module.js';
 import { createCalCards, addUsersToCards } from './layout.module.js';
 import { validateInputs } from './validations.js';
 
-function initializeForms() {
+const initializeForms = () => {
   let inputForm = document.forms['birthdayForm'];
   inputForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
@@ -16,15 +16,15 @@ function initializeForms() {
       addUsersToCards(users);
     }
   });
-}
+};
 
-function initialize() {
+const initialize = () => {
   createCalCards();
   initializeForms();
   // let users = processUserInput(sampleInputs.users, sampleInputs.yearInput);
   // // console.log('initialize -> users', users);
   // console.table(users);
   // addUsersToCards(users);
-}
+};
 
 window.onload = initialize;

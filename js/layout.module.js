@@ -1,6 +1,6 @@
-import { globalData } from './helpers.js';
+import { globalData } from './constants.js';
 
-function createCalCards() {
+const createCalCards = () => {
   const { days } = globalData;
   let printDays = [...days];
   printDays.shift();
@@ -34,7 +34,7 @@ function createCalCards() {
   }
 
   cardsContainers.append(...cards);
-}
+};
 
 function addUsersToCards(users) {
   let dayContainers = {};
