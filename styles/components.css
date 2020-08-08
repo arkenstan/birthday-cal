@@ -25,24 +25,54 @@
 }
 
 .card > .card-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-  grid-auto-rows: 1fr;
-  /* height: 100%; */
+  height: 100%;
   border: 2px solid #ced3d5;
   border-top: 0;
 }
-.card > .card-content > .user {
+.card > .card-content > .user-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  grid-auto-rows: 1fr;
+}
+.card > .card-content > .user-content > .user {
   /* border: 1px solid #000; */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  background-color: #d2cbf5;
+  color: #fff;
+  font-weight: bold;
 }
-.card > .card-content > .user::before {
+.card > .card-content > .user-content > .user::before {
   content: '';
   display: block;
   padding-bottom: 100%;
   /* grid-area: 1 / 1 / 2 / 2; */
+}
+.color-class-1 {
+  background-color: #545b7b;
+}
+.color-class-2 {
+  background-color: #9ed600;
+}
+.color-class-3 {
+  background-color: #ca7c99;
+}
+.color-class-4 {
+  background-color: #76cae7;
+}
+.color-class-5 {
+  background-color: #ea481c;
+}
+.color-class-6 {
+  background-color: #004fd3;
+}
+.color-class-7 {
+  background-color: #ff32ab;
+}
+.color-class-8 {
+  background-color: #00cbff;
+}
+.color-class-9 {
+  background-color: #ff9c00;
 }
