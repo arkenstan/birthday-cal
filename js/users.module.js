@@ -41,7 +41,6 @@ function processUserInput(users, year) {
     let { currentDob, age, dayOfWeek } = processDate(birthday, year);
     if (age >= 0) {
       const initials = processInitials(name, initialsArray);
-      console.log('processUserInput -> initals', initials);
       initialsArray.push(initials);
       temp = {
         ...temp,
