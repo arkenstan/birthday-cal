@@ -1,5 +1,10 @@
 import { globalData } from './constants.js';
 
+/**
+ *
+ * Function draws cal cards on the UI
+ *
+ */
 const createCalCards = () => {
   const { days } = globalData;
   let printDays = [...days];
@@ -36,7 +41,16 @@ const createCalCards = () => {
   cardsContainers.append(...cards);
 };
 
-function addUsersToCards(users) {
+/**
+ *
+ * Function will add users to their respective cal cards
+ *
+ * @param {Array} users
+ * @param {string} users[$].initials
+ * @param {string} users[$].dayOfWeek
+ *
+ */
+const addUsersToCards = (users) => {
   let dayContainers = {};
 
   for (let user of users) {
@@ -61,6 +75,19 @@ function addUsersToCards(users) {
       contentEl.innerHTML = `<div class="user color-class-none"></div>`;
     }
   }
-}
+};
 
-export { createCalCards, addUsersToCards };
+const showErrors = (errors) => {
+  let errorContainer = document.getElementById('formErrors');
+  let errorEls = [];
+  errorContainer.innerHTML = '';
+  for (let error of errors) {
+    let errorEl = document.createElement('li');
+    errorEl.setAttribute('class', 'error');
+    errorEl.innerText = error;
+    errorEls.push(errorEl);
+  }
+  errorContainer.append(...errorEls);
+};
+
+export { createCalCards, addUsersToCards, showErrors };
