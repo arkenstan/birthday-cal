@@ -4,17 +4,19 @@ const validations = {
       throw new Error('Birthday should be an array');
     }
     let validatedData = [];
-    let nameRegexp = new RegExp(/[\w\s]*/, 'gi');
+    let nameRegexp = /^[\w\s]*$/i;
     for (let birthdayInput of birthdayInputs) {
-      let temp = { name: null, dob: null };
+      let temp = { name: null, birthday: null };
       let { name, birthday } = birthdayInput;
+      name = name.toString().trim();
+      const isName = nameRegexp.test(name);
       // Test name
-      if (!birthday.name.test(nameRegexp)) {
+      if (!isName) {
         throw new Error(
           `Invalid name ${name}. Name should only container alphabets and space`
         );
       } else {
-        temp.name = name.trim();
+        temp.name = name;
       }
 
       // Parse Date
@@ -33,9 +35,9 @@ const validations = {
   isCorrectYear: (val) => {
     let hasError = false;
     if (!Number.isInteger(val)) {
-      hasError = 'Invalid Number';
+      throw new Error('Invalid Year Input');
     } else if (val <= 1900) {
-      hasError = 'Entered Year should be greater than 1900';
+      throw new Error('Entered Year should be greater than 1900');
     }
     return hasError;
   },
@@ -43,7 +45,7 @@ const validations = {
 
 function validateInputs(formInputs) {
   let birthdayInput = formInputs['birthdayList'].value;
-  let yearInput = formInputs['year'].value;
+  let yearInput = +formInputs['year'].value;
   let formData = { errors: [], birthdays: null, year: null };
 
   // Validate birthday inputs
@@ -56,11 +58,11 @@ function validateInputs(formInputs) {
   }
 
   // Validate Input Date
-  let yearError = validations.isCorrectYear(yearInput);
-  if (yearError) {
-    formData.errors.push(yearError);
-  } else {
+  try {
+    validations.isCorrectYear(yearInput);
     formData = { ...formData, year: yearInput };
+  } catch (error) {
+    formData.errors.push(error.message);
   }
 
   return formData;
